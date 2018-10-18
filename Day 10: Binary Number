@@ -1,1 +1,50 @@
 
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        int n = scanner.nextInt();
+        scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
+        binary(n);
+        scanner.close();
+    }
+    
+    public static void binary(int n){
+        String x="";
+        while(n>0){
+            if(n%2==0){
+                x=x+"0";
+            }else{
+                x=x+"1";;
+            }
+            n=n/2; 
+        }
+        int cons=0;
+        int temp=0;
+for(int i=0;i<x.length();i++){
+    if(x.charAt(i)=='1'){
+        cons++;
+        if(cons>temp){
+            temp=cons;
+        }
+    }else{
+        cons=0;
+    }
+    
+    
+}
+    System.out.println(temp);
+    }
+}
+
